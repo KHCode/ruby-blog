@@ -13,3 +13,58 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Open Sans"
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10%;
+}
+
+.index-headline,
+.index-count,
+.index-list,
+.index-to-new {
+  display: block;
+}
+
+.index-headline {
+  padding: 20px 0;
+}
+
+.index-count {
+  padding: 10px 0;
+}
+
+.index-list {
+  padding: 20px;
+  width: 100%;
+  text-align: left;
+  border-radius: 5px;
+  background: rgb(176, 180, 231);
+  li {
+    padding: 5px;
+  }
+}
+
+.index-to-new {
+  align-self: flex-end;
+  padding: 10px;
+}
