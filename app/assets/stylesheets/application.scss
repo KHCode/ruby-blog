@@ -39,6 +39,12 @@ body {
   margin: 10%;
 }
 
+/*****************************
+ *                           *
+ *  Index/Main/Landing Page  *
+ *                           *
+ *****************************/
+
 .index-headline,
 .index-count,
 .index-list,
@@ -70,6 +76,26 @@ body {
   padding: 10px;
 }
 
+/*****************************
+ *                           *
+ *      New Article Page     *
+ *                           *
+ *****************************/
+
+.input-title {
+  padding: 10px 0;
+  #article_title {
+    width: 80%;
+    height: 24px;
+  }
+}
+
+.input-submit {
+  padding: 10px 0;
+}
+
+
+
 .trix-content .attachment-gallery > action-text-attachment,
 .trix-content .attachment-gallery > .attachment {
   flex: 1 0 33%;
@@ -87,4 +113,8 @@ body {
 .trix-content action-text-attachment .attachment {
   padding: 0 !important;
   max-width: 100% !important;
+}
+
+trix-editor {
+  height: 300px;
 }
