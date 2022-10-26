@@ -12,15 +12,16 @@
  *
  *= require_tree .
  *= require_self
+ *= require trix
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-family: "Open Sans"
+  // margin: 0;
+  // padding: 0;
+  // border: 0;
+  font-family: "Open Sans";
 }
 
 ol, ul {
@@ -67,4 +68,23 @@ body {
 .index-to-new {
   align-self: flex-end;
   padding: 10px;
+}
+
+.trix-content .attachment-gallery > action-text-attachment,
+.trix-content .attachment-gallery > .attachment {
+  flex: 1 0 33%;
+  padding: 0 0.5em;
+  max-width: 33%;
+}
+
+.trix-content .attachment-gallery.attachment-gallery--2 > action-text-attachment,
+.trix-content .attachment-gallery.attachment-gallery--2 > .attachment, .trix-content .attachment-gallery.attachment-gallery--4 > action-text-attachment,
+.trix-content .attachment-gallery.attachment-gallery--4 > .attachment {
+  flex-basis: 50%;
+  max-width: 50%;
+}
+
+.trix-content action-text-attachment .attachment {
+  padding: 0 !important;
+  max-width: 100% !important;
 }
