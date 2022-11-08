@@ -9,9 +9,15 @@
                     data: { confirm: "Are you sure?" } %></li>
   </ul>
 
-  <h2>Comments</h2>
-  <%= render @article.comments %>
+  <div class="comments-wrapper">
+    <h2>Comments</h2>
+    <% if @article.comments && @article.comments.any? %>
+      <%= render @article.comments %>
+    <% else %>
+      <span class="none-of-type">No comments yet.</span>
+    <% end %>
+  </div>
 
-  <h2>Add a comment:</h2>
+  <h3>Add a comment:</h3>
   <%= render 'comments/form' %>
 </div>
