@@ -1,16 +1,17 @@
-<h1><%= @article.title %></h1>
+<div class="content-wrapper">
+  <h1><%= @article.title %></h1>
+  <article><%= @article.body %></article>
 
-<p><%= @article.body %></p>
+  <ul class="article-change-options">
+    <li id="edit-btn"><%= link_to "Edit", edit_article_path(@article) %></li>
+    <li id="delete-btn"><%= link_to "Delete", article_path(@article),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %></li>
+  </ul>
 
-<ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %></li>
-  <li><%= link_to "Destroy", article_path(@article),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %></li>
-</ul>
+  <h2>Comments</h2>
+  <%= render @article.comments %>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
-
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+  <h2>Add a comment:</h2>
+  <%= render 'comments/form' %>
+</div>

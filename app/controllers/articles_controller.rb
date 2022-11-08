@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 
   before_action :authorize, only: [:edit, :update]
 
-  http_basic_authenticate_with name: "kris", password: "secret", except: [:index, :show]
+  # http_basic_authenticate_with name: "kris", password: "secret", except: [:index, :show]
 
   def index
     @articles = Article.all

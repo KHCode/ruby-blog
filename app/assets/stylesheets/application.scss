@@ -31,6 +31,7 @@ ol, ul {
 
 a {
   text-decoration: none;
+  color: none;
 }
 
 body {
@@ -98,6 +99,43 @@ nav {
 
 .input-submit {
   padding: 10px 0;
+}
+
+/*****************************
+ *                           *
+ *     Show Article Page     *
+ *                           *
+ *****************************/
+
+.content-wrapper {
+  width: 50%;
+  margin-top: 100px;
+}
+
+.article-change-options {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  width: 100%;
+  padding-top: 20px;
+
+  li {
+    // border: solid 5px;
+    border-radius: 10px;
+    display: block;
+    padding: 5px 10px;
+  }
+
+  #edit-btn {
+    background: orange;
+  }
+
+  #delete-btn {
+    background: red;
+    color: white;
+  }
+
+
 }
 
 /*****************************
