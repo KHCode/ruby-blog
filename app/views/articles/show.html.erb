@@ -1,8 +1,8 @@
 <div class="content-wrapper">
   <h1><%= @article.title %></h1>
-  <p class="post-times">Posted on <%= @article.created_at.strftime("%A, %B %e, %Y @ %l:%M") %></p>
+  <p class="post-times">Originally Posted:<%= @article.created_at.strftime("%A, %B %e, %Y @ %l:%M") %></p>
   <% if @article.updated_at != @article.created_at %>
-    <p class="post-times">Updated on <%= @article.updated_at.strftime("%A, %B %e, %Y @ %l:%M") %></p>
+    <p class="post-times">Last Updated:<%= @article.updated_at.strftime("%A, %B %e, %Y @ %l:%M") %></p>
   <% end %>
   <article class="body-text"><%= @article.body %></article>
 
