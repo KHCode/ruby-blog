@@ -58,6 +58,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_10_000847) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
+    t.bigint "users_id"
+    t.index ["users_id"], name: "index_articles_on_users_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -67,7 +69,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_10_000847) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
+    t.bigint "users_id"
     t.index ["article_id"], name: "index_comments_on_article_id"
+    t.index ["users_id"], name: "index_comments_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -75,15 +79,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_10_000847) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "articles_id", null: false
-    t.bigint "comments_id", null: false
-    t.index ["articles_id"], name: "index_users_on_articles_id"
-    t.index ["comments_id"], name: "index_users_on_comments_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "articles", "users", column: "users_id"
   add_foreign_key "comments", "articles"
-  add_foreign_key "users", "articles", column: "articles_id"
-  add_foreign_key "users", "comments", column: "comments_id"
+  add_foreign_key "comments", "users", column: "users_id"
 end
