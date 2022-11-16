@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.photos.attach(params[:image])
+    @article.photos.attach(params[:course][:photos])
 
     if @article.save
       redirect_to @article
