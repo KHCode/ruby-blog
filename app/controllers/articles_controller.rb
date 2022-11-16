@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.photos.attach(params[:image])
 
     if @article.save
       redirect_to @article
@@ -49,6 +50,6 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, :body, :status)
+      params.require(:article).permit(:title, :body, :status, photos: [])
     end
 end
