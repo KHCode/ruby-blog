@@ -85,13 +85,31 @@ nav, footer {
   li {
     padding: 5px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    .index-article-preview-details {
+      display: flex;
+      flex-direction: column;
+      span {
+        display: block;
+        line-height: 1.5;
+      }
+    }
   }
 }
 
 .index-to-new {
   align-self: flex-end;
   padding: 10px;
+}
+
+.article-thumb {
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 /*****************************

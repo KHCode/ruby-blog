@@ -28,5 +28,10 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
+    @user = user
+    can [:index, :show], Article
+    can [:new, :create, :edit, :update, :destroy], Article, user_id: user_id
+    can [:index, :show], Comment
+    can [:new, :create, :edit, :update, :destroy], Comment, user_id: user_id
   end
 end

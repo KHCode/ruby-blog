@@ -7,9 +7,12 @@
     <% @articles.each do |article| %>
       <% unless article.archived? %>
         <li>
-            <%= image_tag url_for(article.photos.first) %>
-            <%= link_to article.title, article %>
-            <span class="index-article-timestamp"><%= article.created_at.strftime("%Y/%-m/%-d")%>
+            <%= image_tag url_for(article.body.embeds_blobs.first.variant(resize_to_limit: [200, 200]).processed), class: "article-thumb" %>
+            <div class="index-article-preview-details">
+              <span><%= link_to article.title, article %></span>
+              <span class="index-article-timestamp"><%= article.created_at.strftime("%Y/%-m/%-d")%></span>
+              <span class="index-article-preview"><%= article.body.to_plain_text.truncate(80) %></span>
+            </div>
         </li>
       <% end %>
     <% end %>
